@@ -11,10 +11,16 @@ let stephansdom = {
 // Karte initialisieren
 let map = L.map("map").setView([stephansdom.lat, stephansdom.lng], stephansdom.zoom);
 
-// Hintergrundkarte definieren
-L.tileLayer('https://mapsneu.wien.gv.at/basemap/bmapgrau/normal/google3857/{z}/{y}/{x}.png', {
-    maxZoom: 19,
-    attribution: 'Hintergrundkarte: <a href="https://www.basemap.at">basemap.at</a>'
+
+// Layercontrol
+L.control.layers({
+    "BasemapAT grau": L.tileLayer('https://mapsneu.wien.gv.at/basemap/bmapgrau/normal/google3857/{z}/{y}/{x}.png', {
+        maxZoom: 19,
+        attribution: 'Hintergrundkarte: <a href="https://www.basemap.at">basemap.at</a>'
+    }).addTo(map)
+}, {
+
+
 }).addTo(map);
 
 // Maßstab
