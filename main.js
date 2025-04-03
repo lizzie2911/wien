@@ -22,10 +22,7 @@ let overlays = {
 
 // Layercontrol
 L.control.layers({
-    "BasemapAT grau": L.tileLayer('https://mapsneu.wien.gv.at/basemap/bmapgrau/normal/google3857/{z}/{y}/{x}.png', {
-        maxZoom: 19,
-        attribution: 'Hintergrundkarte: <a href="https://www.basemap.at">basemap.at</a>'
-    }).addTo(map)
+    "BasemapAT grau": L.tileLayer.provider('Stadia.StamenWatercolor').addTo(map)
 }, {
     "Sehenswürdigkeiten": overlays.sights,
     "Vienna sightseeing Linien": overlays.lines,
