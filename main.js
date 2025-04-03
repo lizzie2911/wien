@@ -22,7 +22,10 @@ let overlays = {
 
 // Layercontrol
 L.control.layers({
-    "BasemapAT grau": L.tileLayer.provider('Stadia.StamenWatercolor').addTo(map)
+    "BasemapAT watercolour": L.tileLayer.provider('Stadia.StamenWatercolor').addTo(map),
+    "BasemapAT": L.tileLayer.provider('BasemapAT.basemap').addTo(map),
+    "BasemapAT surface": L.tileLayer.provider('BasemapAT.surface').addTo(map),
+    "BasemapAT orthophoto": L.tileLayer.provider('BasemapAT.orthofoto').addTo(map)
 }, {
     "Sehenswürdigkeiten": overlays.sights,
     "Vienna sightseeing Linien": overlays.lines,
