@@ -38,6 +38,7 @@ async function loadSights(url) {
 }
 loadSights("https://data.wien.gv.at/daten/geo?service=WFS&request=GetFeature&version=1.1.0&typeName=ogdwien:SEHENSWUERDIGOGD&srsName=EPSG:4326&outputFormat=json")
 
+// Vekehrsmittel Linien
 async function loadLines(url) {
     console.log(url);
     let response= await fetch(url);
@@ -49,6 +50,7 @@ async function loadLines(url) {
 }
 loadSights("https://data.wien.gv.at/daten/geo?service=WFS&request=GetFeature&version=1.1.0&typeName=ogdwien:TOURISTIKLINIEVSLOGD&srsName=EPSG:4326&outputFormat=json")
 
+// Haltstellen
 async function loadStops(url) {
     console.log(url);
     let response = await fetch(url);
@@ -60,6 +62,7 @@ async function loadStops(url) {
 }
 loadStops("https://data.wien.gv.at/daten/geo?service=WFS&request=GetFeature&version=1.1.0&typeName=ogdwien:TOURISTIKHTSVSLOGD&srsName=EPSG:4326&outputFormat=json")
 
+// Fußgängerzone
 async function loadZones(url) {
     console.log(url);
     let response = await fetch(url);
