@@ -17,10 +17,6 @@ L.tileLayer('https://mapsneu.wien.gv.at/basemap/bmapgrau/normal/google3857/{z}/{
     attribution: 'Hintergrundkarte: <a href="https://www.basemap.at">basemap.at</a>'
 }).addTo(map);
 
-// Marker mit Popup beim Stephansdom
-let marker = L.marker([stephansdom.lat, stephansdom.lng]).addTo(map);
-marker.bindPopup(stephansdom.title).openPopup();
-
 // Maßstab
 L.control.scale({
     imperial: false,
