@@ -52,7 +52,7 @@ async function loadSights(url) {
 // Vekehrsmittel Linien
 async function loadLines(url) {
     console.log(url);
-    let response= await fetch(url);
+    let response = await fetch(url);
     let jsondata = await response.json();
     console.log(jsondata);
     L.geoJSON(jsondata, {
