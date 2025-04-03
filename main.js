@@ -27,10 +27,10 @@ L.control.layers({
         attribution: 'Hintergrundkarte: <a href="https://www.basemap.at">basemap.at</a>'
     }).addTo(map)
 }, {
-    "Sehenswürdigkeiten": L.featureGroup().addTo(map),
-    "Vienna sightseeing Linien": L.featureGroup().addTo(map),
-    "Vienna sightseeing Haltstellen": L.featureGroup().addTo(map),
-    "Fußgängerzonen": L.featureGroup().addTo(map),
+    "Sehenswürdigkeiten": overlays.sights,
+    "Vienna sightseeing Linien": overlays.lines,
+    "Vienna sightseeing Haltstellen": overlays.stops,
+    "Fußgängerzonen": overlays.zones,
 }).addTo(map);
 
 // Maßstab
@@ -48,7 +48,6 @@ async function loadSights(url) {
         attribution: "Datenquelle: <a href='https://data.wien.gv.at' >Stadt Wien </a>"
     }).addTo(map);
 }
-
 
 // Vekehrsmittel Linien
 async function loadLines(url) {
