@@ -32,7 +32,7 @@ L.control.layers({
     "Vienna sightseeing Linien": overlays.lines,
     "Vienna sightseeing Haltstellen": overlays.stops,
     "Fußgängerzonen": overlays.zones,
-    "Hotels und Unterkünfte": overlays.hotels
+    "Hotels und Unterkünfte": overlays.hotels,
 }).addTo(map);
 
 // Maßstab
