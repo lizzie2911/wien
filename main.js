@@ -93,7 +93,7 @@ async function loadHotels(url) {
     console.log(jsondata);
     L.geoJSON(jsondata, {
         attribution: "Datenquelle: <a href='https://data.wien.gv.at' >Stadt Wien </a>"
-    })
+    }).addTo(overlays.hotels);
 }
 // GeoJSON und visualisieren
 loadSights("https://data.wien.gv.at/daten/geo?service=WFS&request=GetFeature&version=1.1.0&typeName=ogdwien:SEHENSWUERDIGOGD&srsName=EPSG:4326&outputFormat=json")
