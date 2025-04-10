@@ -60,7 +60,24 @@ async function loadLines(url) {
     L.geoJSON(jsondata, {
         attribution: "Datenquelle: <a href='https://data.wien.gv.at' >Stadt Wien </a>",
         style: function (feature) {
-            console.log(feature)
+            console.log(feature.properties.LINE_NAME);
+
+            let lineColor;
+            
+            if (feature.properties.LINE_NAME == "Yellow Line") {
+                lineColor = "#FFDC00";
+            } else if (feature.properties.LINE_NAME == "Blue Line") {
+                lineColor = "#0074D9";
+            } else if (feature.properties.LINE_NAME == "Red Line") {
+                lineColor = "#FF4136";
+            } else if (feature.properties.LINE_NAME == "Green Line") {
+                    lineColor = "#2ECC40";
+            } else if (feature.properties.LINE_NAME == "Grey Line") {
+                lineColor = "#AAAAAA";
+            } else if (feature.properties.LINE_NAME == "Orange Line") {
+                lineColor = "#FF851B"; 
+            }
+            
             return {
                 color: "#39CCCC", 
                 weight: 1,
