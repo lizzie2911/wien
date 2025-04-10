@@ -60,7 +60,7 @@ async function loadLines(url) {
     L.geoJSON(jsondata, {
         attribution: "Datenquelle: <a href='https://data.wien.gv.at' >Stadt Wien </a>",
         style: function (feature) {
-            //console.log(feature)
+            console.log(feature)
             return {
                 color: "#39CCCC", 
                 weight: 1,
