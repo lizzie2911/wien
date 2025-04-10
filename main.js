@@ -81,9 +81,9 @@ async function loadLines(url) {
             }
             
             return {
-                color: "#39CCCC", 
+                color: lineColor, 
                 weight: 1,
-                opacity: 0.4,
+                opacity: 0.6,
                 fillOpacity: 0.1,
             }
         }
