@@ -76,6 +76,8 @@ async function loadLines(url) {
                 lineColor = "#AAAAAA";
             } else if (feature.properties.LINE_NAME == "Orange Line") {
                 lineColor = "#FF851B"; 
+            } else {
+                lineColor = "#111111";
             }
             
             return {
