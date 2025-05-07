@@ -118,6 +118,7 @@ async function loadLines(url) {
                 <span> Line ${feature.properties.LINE_NAME}</span></h3>
                 </div>
                 <i class="fa-regular fa-circle-stop"></i>
+                <span></span>
                 <i class="fa-solid fa-arrow-down"></i>
                 <i class="fa-regular fa-circle-stop"></i>
                 `);
@@ -159,7 +160,7 @@ async function loadStops(url) {
     }).addTo(overlays.stops);
 }
 
-//<img src="icons/bus_${feature.properties.LINE_ID}.png">
+
 // Fußgängerzone
 async function loadZones(url) {
     console.log(url);
@@ -181,8 +182,14 @@ async function loadZones(url) {
             // console.log(feature.properties);
             layer.bindPopup(`
                 <h3>${feature.properties.ADRESSE}</h3>
-                <h4>${feature.properties.ZEITRAUM}</h4>
-                <h4>${feature.properties.AUSN_TEXT}</h4>
+                <div><h4>
+                <i class="fa-regular fa-clock"></i>
+                <span>${feature.properties.ZEITRAUM}</span>
+                </h4></div>
+                <div><h4>
+                <i class="fa-solid fa-circle-info"></i>
+                <span>${feature.properties.AUSN_TEXT}</span>
+                </h4></div>
                 `);
         }
     }).addTo(overlays.zones);
