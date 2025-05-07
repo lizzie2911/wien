@@ -153,6 +153,14 @@ async function loadZones(url) {
                 opacity: 0.4,
                 fillOpacity: 0.1,
             }
+        },
+        onEachFeature: function(feature, layer) {
+            // console.log(feature.properties);
+            layer.bindPopup(`
+                <h3>${feature.properties.ADRESSE}</h3>
+                <h4>${feature.properties.ZEITRAUM}</h4>
+                <h4>${feature.properties.AUSN_TEXT}</h4>
+                `);
         }
     }).addTo(overlays.zones);
 }
@@ -190,6 +198,17 @@ async function loadHotels(url) {
                     popupAnchor: [0, -37]
                 })
             });
+        },
+        onEachFeature: function(feature, layer) {
+            // console.log(feature.properties);
+            layer.bindPopup(`
+                <h4>${feature.properties.BETRIEB}</h4>
+                <h5>${feature.properties.KATEGORIE_TXT}</h5>
+                <address>${feature.properties.ADRESSE}</address>
+                <p> tel: <a href="tel:${feature.properties.KONTAKT_TEL}">${feature.properties.KONTAKT_TEL}</a></p>
+                <p> mail to: <a href="mailto:${feature.properties.KONTAKT_EMAIL}">${feature.properties.KONTAKT_EMAIL}</a></p>
+
+                `);
         }
     }).addTo(overlays.hotels);
 }
