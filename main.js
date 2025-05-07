@@ -115,12 +115,17 @@ async function loadLines(url) {
             layer.bindPopup(`
                 <div><h3>
                 <i class="fa-solid fa-bus"></i>
-                <span> Line ${feature.properties.LINE_NAME}</span></h3>
+                <span> Line ${feature.properties.LINE_NAME}</spa></h3>
                 </div>
+                <div>
                 <i class="fa-regular fa-circle-stop"></i>
-                <span></span>
+                <span>${feature.properties.FROM_NAME}</span>
+                </div>
                 <i class="fa-solid fa-arrow-down"></i>
+                <div>
                 <i class="fa-regular fa-circle-stop"></i>
+                <span> ${feature.properties.TO_NAME}</span>
+                </div>
                 `);
         }
 
