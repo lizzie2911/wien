@@ -109,7 +109,20 @@ async function loadLines(url) {
                 opacity: 0.6,
                 fillOpacity: 0.1,
             }
+        },
+        onEachFeature: function(feature, layer) {
+            console.log(feature.properties);
+            layer.bindPopup(`
+                <div><h3>
+                <i class="fa-solid fa-bus"></i>
+                <span> Line ${feature.properties.LINE_NAME}</span></h3>
+                </div>
+                <i class="fa-regular fa-circle-stop"></i>
+                <i class="fa-solid fa-arrow-down"></i>
+                <i class="fa-regular fa-circle-stop"></i>
+                `);
         }
+
     }).addTo(overlays.lines);
 }
 
@@ -133,7 +146,7 @@ async function loadStops(url) {
             });
         },
         onEachFeature: function(feature, layer) {
-            console.log(feature.properties);
+            //console.log(feature.properties);
             layer.bindPopup(`
                 <div><h3>
                 <i class="fa-solid fa-bus"></i>
