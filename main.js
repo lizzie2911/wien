@@ -131,12 +131,22 @@ async function loadStops(url) {
                     popupAnchor: [0, -37]
                 })
             });
+        },
+        onEachFeature: function(feature, layer) {
+            console.log(feature.properties);
+            layer.bindPopup(`
+                <div><h3>
+                <i class="fa-solid fa-bus"></i>
+                <span> Line ${feature.properties.LINE_NAME}</spa></h3>
+                </div>
+                <h4> ${feature.properties.STAT_NAME}</h4>
+                `);
         }
 
     }).addTo(overlays.stops);
 }
 
-
+//<img src="icons/bus_${feature.properties.LINE_ID}.png">
 // Fußgängerzone
 async function loadZones(url) {
     console.log(url);
