@@ -158,7 +158,7 @@ async function loadStops(url) {
                 <i class="fa-solid fa-bus"></i>
                 <span> Line ${feature.properties.LINE_NAME}</spa></h3>
                 </div>
-                <h4> ${feature.properties.STAT_NAME}</h4>
+                <h4> ${feature.properties.ID }${feature.properties.STAT_NAME}</h4>
                 `);
         }
 
